@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Birthday Wish</title>
+    <style>
+        body { 
+            background-color: black; 
+            color: #00ff00; 
+            font-family: 'Courier New', monospace; 
+            text-align: center; 
+            overflow: hidden; 
+        }
+        h1 { font-size: 28px; text-shadow: 0px 0px 10px lime; }
+        #text { font-size: 22px; white-space: pre-line; }
+        .fireworks, .balloons, .flowers { position: absolute; }
+        .blink { animation: blink 1s infinite alternate; }
+        @keyframes blink { 50% { opacity: 0; } }
+        
+        /* 🎈 Balloons Animation */
+        @keyframes balloon-float {
+            0% { transform: translateY(100vh) scale(0.8); }
+            100% { transform: translateY(-10vh) scale(1.2); }
+        }
+        .balloons { animation: balloon-float 5s infinite ease-in-out; }
+
+        /* 🎆 Fireworks */
+        @keyframes fireworks {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(1.5); opacity: 0; }
+        }
+        .fireworks { animation: fireworks 1.5s ease-out infinite; }
+
+        /* 🌸 Flowers Falling */
+        @keyframes flower-fall {
+            0% { transform: translateY(-100px); }
+            100% { transform: translateY(100vh); }
+        }
+        .flowers { animation: flower-fall 5s linear infinite; }
+    </style>
+</head>
+<body>
+    <h1>🔓 Access Granted</h1>
+    <p id="text"></p>
+
+    <!-- 🎂 Cake Cutting GIF -->
+    <img src="https://media.giphy.com/media/xT1XGzXhVxu1bECJFS/giphy.gif" width="200px">
+    
+    <!-- 🎈 Balloons -->
+    <img src="https://media.giphy.com/media/l3q2K5jinAlChoCLS/giphy.gif" class="balloons" style="left: 10%;">
+    <img src="https://media.giphy.com/media/l3q2K5jinAlChoCLS/giphy.gif" class="balloons" style="right: 10%;">
+    
+    <!-- 🎆 Fireworks -->
+    <img src="https://media.giphy.com/media/3o7TKMt1VVNkHV2PaE/giphy.gif" class="fireworks" style="top: 20%; left: 30%;">
+    <img src="https://media.giphy.com/media/3o7TKMt1VVNkHV2PaE/giphy.gif" class="fireworks" style="top: 20%; right: 30%;">
+    
+    <!-- 🌸 Flowers Falling -->
+    <img src="https://media.giphy.com/media/3o7TKpBePNhBN6i3jO/giphy.gif" class="flowers" style="left: 5%;">
+    <img src="https://media.giphy.com/media/3o7TKpBePNhBN6i3jO/giphy.gif" class="flowers" style="right: 5%;">
+    
+    <script>
+        let message = `
+        "🔓 System breached… but heart still unprotected...
+        Ye hacker, jo sirf tujhe hack karna chahta tha...
+        Par tera pyaar to ek secured server nikla... aur main bas ek 404 error ho gaya... 💔😔"
+
+        Lekin... ye hacker bhi tere bina hacked mehsoos karta hai...
+        Tere bina, meri duniya ek disconnected network ki tarah lagti hai...
+        Sab kuch chal raha hai, par signal lost hai..."
+
+        "Socha tha ki main tera one-time password hoon...
+        Par shayad main ek expired session ban gaya... 😞"
+
+        "Par koi baat nahi... Jab tak tu khush hai, tab tak system stable hai...
+        Teri khushi hi meri security patch hai..."
+
+        "Aur haan... 🎂 Happy Birthday meri jaan! 🎂💖"
+        `;
+        
+        let i = 0;
+        function typeEffect() {
+            if (i < message.length) {
+                document.getElementById("text").innerHTML += message.charAt(i);
+                i++;
+                setTimeout(typeEffect, 50); // Typing speed
+            }
+        }
+        typeEffect();
+    </script>
+</body>
+</html>
